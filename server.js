@@ -353,20 +353,6 @@ function getCurrentEnvironment() {
   }
 }
 
-function multiLog(stuff) {
-  stuff = Date() + " : " + stuff;
-  console.log(stuff);
-  fs.appendFile(
-    CONFIG.SERVER_LOG_FILE,
-    stuff + '\r\n',
-    {flags: 'a+', encoding: 'utf8'},
-    function(err) {
-      if (!err) {return;}
-      setTimeout(function() {console.log(err);});
-    }
-  );
-}
-
 /*
  *  Methods to retrieve/store file based information.
  */
